@@ -1,2 +1,2 @@
 Select-AzSubscription -SubscriptionId d130c0b6-8dec-43f8-8b17-8fa8310a8e5e
-Stop-AzureRmVM -ResourceGroupName "rg-vm-dev-01" -Name "vmtestsrv01" -Force
+Stop-AzVM -ResourceGroupName 'rg-vm-dev-01' -Name 'vmtestsrv01' -Force
