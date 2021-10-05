@@ -17,7 +17,7 @@
             },
             "properties": {
                 "azPowerShellVersion": "6.3",
-                "primaryScriptUri": "https://raw.githubusercontent.com/mjuda-sii/templates/main/script.ps1",
+                "primaryScriptUri": "https://raw.githubusercontent.com/mjuda-sii/templates/main/start_script.ps1",
                 "supportingScriptUris": [],
                 "timeout": "PT30M",
                 "cleanupPreference": "OnSuccess",
