@@ -20,7 +20,7 @@
                 "primaryScriptUri": "https://raw.githubusercontent.com/mjuda-sii/templates/main/stop_script.ps1",
                 "supportingScriptUris": [],
                 "timeout": "PT30M",
-                "cleanupPreference": "OnSuccess",
+                "cleanupPreference": "Always",
                 "retentionInterval": "P1D"
             }
         }
