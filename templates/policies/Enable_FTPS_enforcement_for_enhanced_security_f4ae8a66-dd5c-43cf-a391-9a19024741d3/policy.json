@@ -1,0 +1,90 @@
+{
+ "properties": {
+  "displayName": "Enable FTPS enforcement for enhanced security",
+  "policyType": "Custom",
+  "mode": "All",
+  "description": "Enable FTPS enforcement for enhanced security",
+  "metadata": {
+   "category": "Security",
+   "createdBy": "ee24d998-3bc5-4325-97c0-68c3fb76d416",
+   "createdOn": "2022-02-08T13:30:42.5902517Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "effect": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Effect",
+     "description": "Enable or disable the execution of the policy"
+    },
+    "allowedValues": [
+     "DeployIfNotExists",
+     "Disabled"
+    ],
+    "defaultValue": "DeployIfNotExists"
+   }
+  },
+  "policyRule": {
+   "if": {
+    "field": "type",
+    "equals": "Microsoft.Web/sites"
+   },
+   "then": {
+    "effect": "[parameters('effect')]",
+    "details": {
+     "type": "Microsoft.Web/sites/config",
+     "existenceCondition": {
+      "field": "Microsoft.Web/sites/config/ftpsState",
+      "in": [
+       "FtpsOnly",
+       "Disabled"
+      ]
+     },
+     "roleDefinitionIds": [
+      "/providers/Microsoft.Authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+     ],
+     "deployment": {
+      "properties": {
+       "mode": "incremental",
+       "parameters": {
+        "webAppName": {
+         "value": "[field('name')]"
+        },
+        "location": {
+         "value": "[field('location')]"
+        }
+       },
+       "template": {
+        "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+         "webAppName": {
+          "type": "string"
+         },
+         "location": {
+          "type": "string"
+         }
+        },
+        "resources": [
+         {
+          "name": "[concat(parameters('webAppName'), '/web')]",
+          "type": "Microsoft.Web/sites/config",
+          "apiVersion": "2020-09-01",
+          "location": "[parameters('location')]",
+          "properties": {
+           "ftpsState": "FtpsOnly"
+          }
+         }
+        ]
+       }
+      }
+     }
+    }
+   }
+  }
+ },
+ "id": "/subscriptions/d130c0b6-8dec-43f8-8b17-8fa8310a8e5e/providers/Microsoft.Authorization/policyDefinitions/f4ae8a66-dd5c-43cf-a391-9a19024741d3",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "f4ae8a66-dd5c-43cf-a391-9a19024741d3"
+}

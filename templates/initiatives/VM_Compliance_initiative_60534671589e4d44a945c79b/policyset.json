@@ -1,0 +1,81 @@
+{
+ "properties": {
+  "displayName": "VM Compliance initiative",
+  "policyType": "Custom",
+  "description": "",
+  "metadata": {
+   "category": "Security",
+   "version": "1.1",
+   "parameterScopes": {
+    "logAnalytics": "/subscriptions/d130c0b6-8dec-43f8-8b17-8fa8310a8e5e"
+   },
+   "createdBy": "ee24d998-3bc5-4325-97c0-68c3fb76d416",
+   "createdOn": "2021-11-26T14:22:22.8645496Z",
+   "updatedBy": "ee24d998-3bc5-4325-97c0-68c3fb76d416",
+   "updatedOn": "2021-11-30T12:03:38.7108861Z"
+  },
+  "parameters": {},
+  "policyDefinitions": [
+   {
+    "policyDefinitionReferenceId": "Deploy the Windows Guest Configuration extension to enable Guest Configuration assignments on Window_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/385f5831-96d4-41db-9a3c-cd3af78aaae6",
+    "parameters": {},
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy the Linux Guest Configuration extension to enable Guest Configuration assignments on Linux VM_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/331e8ea8-378a-410f-a2e5-ae22f38bb0da",
+    "parameters": {},
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy - Configure Log Analytics extension to be enabled on Windows virtual machines_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0868462e-646c-4fe3-9ced-a733534b6a2c",
+    "parameters": {
+     "logAnalytics": {
+      "value": "/subscriptions/d130c0b6-8dec-43f8-8b17-8fa8310a8e5e/resourcegroups/rg-sharedsvcs-dev-01/providers/microsoft.operationalinsights/workspaces/law-northeurope-dev-01"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy Log Analytics extension for Linux VMs_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/053d3325-282c-4e5c-b944-24faffd30d77",
+    "parameters": {
+     "logAnalytics": {
+      "value": "/subscriptions/d130c0b6-8dec-43f8-8b17-8fa8310a8e5e/resourcegroups/rg-sharedsvcs-dev-01/providers/microsoft.operationalinsights/workspaces/law-northeurope-dev-01"
+     }
+    },
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy default Microsoft IaaSAntimalware extension for Windows Server_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/2835b622-407b-4114-9198-6f7064cbe0dc",
+    "parameters": {},
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy Qualys vulnerability assessment solution on virtual machines_1",
+    "policyDefinitionId": "/subscriptions/d130c0b6-8dec-43f8-8b17-8fa8310a8e5e/providers/Microsoft.Authorization/policyDefinitions/a4cdb70b-ae2b-4209-8683-a3d41282bc27",
+    "parameters": {},
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy - Configure Dependency agent to be enabled on Windows virtual machines_1",
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/1c210e94-a481-4beb-95fa-1571b434fb04",
+    "parameters": {},
+    "groupNames": []
+   },
+   {
+    "policyDefinitionReferenceId": "Deploy Dependency agent for Linux virtual machines_updated_1",
+    "policyDefinitionId": "/subscriptions/d130c0b6-8dec-43f8-8b17-8fa8310a8e5e/providers/Microsoft.Authorization/policyDefinitions/5c73677a-6ba3-4f94-a3ce-e374335ff634",
+    "parameters": {},
+    "groupNames": []
+   }
+  ],
+  "policyDefinitionGroups": []
+ },
+ "id": "/subscriptions/d130c0b6-8dec-43f8-8b17-8fa8310a8e5e/providers/Microsoft.Authorization/policySetDefinitions/60534671589e4d44a945c79b",
+ "type": "Microsoft.Authorization/policySetDefinitions",
+ "name": "60534671589e4d44a945c79b"
+}
